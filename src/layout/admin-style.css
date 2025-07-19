@@ -1,0 +1,51 @@
+.admin-heading {
+    text-align: center;
+    padding: 19px;
+    background-color: #dfdede;
+}
+
+.nav-style {
+    width: 13%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #dfdede;
+}
+
+.logo-style {
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+}
+
+.outlet-style {
+    position: absolute;
+    top: 35px;
+    width: 82%;
+    right: 40px;
+}
+
+.nav-list {
+    background-color: blue;
+    border-bottom: 1px solid lightgray;
+}
+
+.nav-list:hover {
+    background-color: rgb(38, 38, 238);
+}
+
+.link-style {
+    text-decoration: none;
+    color: white;
+}
+
+.logout-style {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+.logout-style button {
+    width: 90%;
+    margin: 10px;
+}
