@@ -29,9 +29,11 @@ export function AdminLogin() {
                         helper.toast("error", "Please enter valid email")
                     }
                 }).catch((error) => {
+                    // console.log(error,"error++++++++1")
                     helper.toast("error", error?.response?.data?.message)
                 })
             } catch(error) {
+                // console.log(error,"error++++++++2")
                 helper.toast("error", error?.response?.data?.message)
             }
         } else {

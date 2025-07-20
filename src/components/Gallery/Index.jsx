@@ -20,13 +20,16 @@ export const GalleryIndex = () => {
     }
   };
 
-  const getAllPhoto = async () => {
+  console.log(media)
+
+  const getAllMedia = async () => {
     try {
       const res = await galleryModel.getPhoto();
       if (res) {
-        setMedia(res?.data?.gallery);
+        setMedia(res?.data?.media);
       }
     } catch (error) {
+      // console.log(error,"error+++++++++++++1")
       helper.toast("error", error?.response?.data?.message);
     }
   };
@@ -42,7 +45,7 @@ const handleDeleteClick = async (id) => {
         await galleryModel.deleteMedia(id).then((response) => {
           if (response) {
             helper.toast("success", response?.data?.message);
-            getAllPhoto();
+            getAllMedia();
           }
         });
       }
@@ -52,7 +55,7 @@ const handleDeleteClick = async (id) => {
 };
 
   useEffect(() => {
-    getAllPhoto();
+    getAllMedia();
   }, []);
 
   return (
