@@ -4,14 +4,15 @@ const baseUrl = import.meta.env.VITE_APP_API_URL;
 
 const axiosInstance = axios.create({
   baseURL: baseUrl,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json"
   },
   transformRequest: [(data, headers) => {
-    const access_token = sessionStorage.getItem('access_token');
-    if (access_token) {
-      headers.Authorization = "Bearer " + access_token;
-    }
+    // const access_token = sessionStorage.getItem('access_token');
+    // if (access_token) {
+    //   headers.Authorization = "Bearer " + access_token;
+    // }
 
     // ✅ Automatically stringify if data is a plain object
     if (data && typeof data === 'object' && !(data instanceof FormData)) {

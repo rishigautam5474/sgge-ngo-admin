@@ -2,21 +2,23 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import logo from "/src/assets/gg.png";
 import "./admin-style.css";
 import helper from "../lib/helper";
+import authModel from "../models/auth.model";
 
 export function AdminLayout() {
     const navigate =useNavigate();
 
     const handleLogoutClick = async (e) => {
         try {
-            if(sessionStorage.getItem("access_token")) {
-                sessionStorage.removeItem("access_token");
-                navigate("/login")
-                helper.toast("success", "Admin logout successfully")
-            } else {
+            await authModel.logout().then((res) => {
+                if(res) {
+                    navigate("/login")
+                    helper.toast("success", "Admin logout successfully")
+                } else {
                 setTimeout(() => {
                     navigate("/login")
                 }, [1000])
             }
+            })
         } catch(error) {
             helper.toast("error", error?.response?.data?.message);
         }
