@@ -20,8 +20,6 @@ export const GalleryIndex = () => {
     }
   };
 
-  console.log(media)
-
   const getAllMedia = async () => {
     try {
       const res = await galleryModel.getPhoto();

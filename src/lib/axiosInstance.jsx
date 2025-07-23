@@ -14,7 +14,6 @@ const axiosInstance = axios.create({
     //   headers.Authorization = "Bearer " + access_token;
     // }
 
-    // ✅ Automatically stringify if data is a plain object
     if (data && typeof data === 'object' && !(data instanceof FormData)) {
       return JSON.stringify(data);
     }

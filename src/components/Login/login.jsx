@@ -25,7 +25,6 @@ export function AdminLogin() {
     try {
       const res = await authModel.login(formData);
       if (res) {
-        // sessionStorage.setItem("access_token", res.data.token);
         helper.toast("success", "Admin login successfully");
         navigate("/admin/dashboard"); 
       } 
@@ -33,7 +32,7 @@ export function AdminLogin() {
         helper.toast("error", "Login failed: No token received");
       }
     } catch (error) {
-      console.log(error,"+++++++++++++++++")
+      // console.log(error,"+++++++++++++++++")
       helper.toast(
         "error",
         error?.response?.data?.message || "Something went wrong"
